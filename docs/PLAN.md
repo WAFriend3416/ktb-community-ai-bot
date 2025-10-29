@@ -8,13 +8,13 @@
 
 ## 단계별 구현 체크리스트
 
-### 1단계: 기초 인프라
+### 1단계: 기초 인프라 ✅
 **요약**: 프로젝트 기본 설정, N개 프로필 동시 실행 코루틴, Playwright 세션 관리, 클릭 요소 수집 & 스코어링
 
-- [ ] main.py: N 프로필 코루틴, 레이트 리미터, Stop
-- [ ] executor.py: Playwright 세션, 클릭 수집
-- [ ] heuristics.py: CTA/Curiosity 스코어링
-- [ ] config/: keywords.json, profiles.yaml, llm_api.yaml
+- [x] main.py: N 프로필 코루틴, 레이트 리미터, Stop
+- [x] executor.py: Playwright 세션, 클릭 수집
+- [x] heuristics.py: CTA/Curiosity 스코어링
+- [x] config/: keywords.json, profiles.yaml, llm_api.yaml
 
 ### 2단계: 탐색 & 안정성
 **요약**: 점수 기반 액션 선택, 무한 루프 방지(TTL, 중복 차단), 재시도 백오프, 봇 탐지 회피

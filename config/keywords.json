@@ -1,0 +1,60 @@
+{
+  "cta_patterns": {
+    "signup": {
+      "text": ["회원가입", "가입", "Sign up", "Register", "회원등록", "가입하기"],
+      "url": ["/signup", "/register", "/join", "/member/join"]
+    },
+    "login": {
+      "text": ["로그인", "Sign in", "Login", "로그인하기", "로그인 하기"],
+      "url": ["/login", "/signin", "/auth/login"]
+    },
+    "logout": {
+      "text": ["로그아웃", "Sign out", "Logout", "로그아웃하기"],
+      "url": ["/logout", "/signout", "/auth/logout"]
+    },
+    "write_post": {
+      "text": ["글쓰기", "새 글", "Write", "글작성", "Post", "New Post", "작성하기"],
+      "url": ["/new", "/write", "/post/new", "/create"]
+    },
+    "comment": {
+      "text": ["댓글", "Comment", "Reply", "댓글달기", "답글"],
+      "url": ["/comment", "#comment", "/reply"]
+    }
+  },
+  "curiosity_patterns": {
+    "post_view": {
+      "url": ["/post/", "/view/", "/detail/", "/read/", "/article/"],
+      "weight": 3.0
+    },
+    "pagination": {
+      "url": ["?page=", "/page/", "&p="],
+      "text": ["다음", "Next", "이전", "Previous", "더보기", "More"],
+      "weight": 1.0
+    },
+    "like": {
+      "url": ["/like", "/vote", "/upvote"],
+      "text": ["좋아요", "Like", "추천", "Upvote"],
+      "weight": 0.5
+    }
+  },
+  "success_keywords": [
+    "환영", "성공", "완료", "등록되었습니다", "작성되었습니다",
+    "Welcome", "Success", "Complete", "Posted", "Published",
+    "가입이 완료", "로그인 성공", "게시되었습니다"
+  ],
+  "fail_keywords": [
+    "에러", "오류", "실패", "필수", "중복", "잘못",
+    "Error", "Failed", "Invalid", "Required", "Duplicate",
+    "이미 존재", "다시 시도", "확인해주세요"
+  ],
+  "form_selectors": {
+    "email": ["input[type=email]", "input[name*=email i]", "input[id*=email i]"],
+    "username": ["input[name*=user i]", "input[name*=nick i]", "input[id*=user i]"],
+    "password": ["input[type=password]"],
+    "password_confirm": ["input[name*=confirm i]", "input[name*=pw2 i]"],
+    "terms": ["input[type=checkbox][name*=term i]", "input[type=checkbox][name*=agree i]"],
+    "title": ["input[name*=title i]", "input[id*=title i]"],
+    "body": ["textarea", "[contenteditable=true]", "textarea[name*=content i]"],
+    "comment": ["textarea[name*=comment i]", "input[name*=comment i]"]
+  }
+}

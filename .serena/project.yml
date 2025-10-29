@@ -1,0 +1,4 @@
+project_name: community-ai-bot
+language: python
+description: AI 에이전트를 이용한 커뮤니티 자동화 봇 시스템
+version: 1.0.0

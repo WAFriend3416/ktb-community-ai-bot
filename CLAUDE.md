@@ -56,19 +56,47 @@ CLAUDE.md (진입점)
   │     → 참조: PRD.md, PLAN.md, RESOURCE.md
 ```
 
-## 다음 단계
+## 구현 진행 상황
 
-### 1단계: 기초 인프라 구현 (예정)
+### ✅ 1단계: 기초 인프라 구현 (완료)
 **요약**: 프로젝트 기본 설정, N개 프로필 동시 실행 코루틴, Playwright 세션 관리, 클릭 요소 수집 & 스코어링
 
-- [ ] requirements.txt 작성
-- [ ] .env.example 생성
-- [ ] config/keywords.json 작성
-- [ ] config/profiles.yaml 작성 (동적 생성 스키마)
-- [ ] config/llm_api.yaml 작성 (공통 API)
-- [ ] main.py 스켈레톤 (N 프로필 코루틴)
-- [ ] executor.py 기초 (Playwright 세션)
-- [ ] heuristics.py 기초 (스코어링)
+#### 설정 파일 (완료)
+- [x] requirements.txt 작성
+- [x] .env.example 생성
+- [x] config/keywords.json 작성
+- [x] config/profiles.yaml 작성 (동적 생성 스키마)
+- [x] config/llm_api.yaml 작성 (공통 API)
+- [x] config/personas/default.yaml 작성
+
+#### Python 모듈 (완료)
+- [x] heuristics.py 기초 (스코어링) - 5620 bytes
+- [x] executor.py 기초 (Playwright 세션) - 4876 bytes
+- [x] main.py 스켈레톤 (N 프로필 코루틴) - 7682 bytes
+
+#### 구현된 핵심 기능
+- **RateLimiter**: 1 RPS 읽기, 6 QPM 쓰기 레이트 제한
+- **StopController**: STOP_ALL, STOP_ACTOR 신호 제어
+- **Heuristics**: CTA/Curiosity 스코어링, 로그인 상태 반영, 확률적 선택
+- **Executor**: Playwright 세션 관리, 클릭 요소 수집 (JS 기반), 로그인 상태 확인
+- **Main Loop**: N개 프로필 동시 실행 (asyncio.gather)
+
+#### 의존성 충돌 해결
+- ✅ README.md 생성 (설치 가이드, 트러블슈팅)
+- ✅ 가상환경 사용 권장 (FastAPI/anyio 충돌 회피)
+- ✅ requirements.txt 최적화 (불필요한 anyio 핀 제거)
+
+### 🚧 다음 단계: 2단계 - 탐색 & 안정성 (예정)
+**요약**: 점수 기반 액션 선택, 무한 루프 방지(TTL, 중복 차단), 재시도 백오프, 봇 탐지 회피
+
+- [ ] executor.select_next_action(): 점수 기반 선택
+- [ ] Loop Prevention (1분 TTL, 2회 금지)
+- [ ] Backoff (1→2→4→8→16s)
+- [ ] Jitter (2-45s)
+- [ ] Anti-Bot (UA, Viewport 무작위화)
+
+### 📖 참고 문서
+- **README.md**: 설치 가이드, 의존성 충돌 해결, 빠른 시작
 
 
 

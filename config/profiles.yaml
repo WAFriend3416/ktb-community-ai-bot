@@ -1,0 +1,15 @@
+# 프로필 생성 설정
+num_profiles: 3  # 환경변수 NUM_PROFILES로 오버라이드 가능
+
+# 다양성 파라미터
+base_temperature: 0.5
+temperature_variance: 0.4  # 0.5 ± 0.4 → 0.1~0.9
+
+# 레이트 리미팅
+base_hourly_limit: 2
+
+# 프로필별 설정 (동적 생성 시 템플릿)
+profile_template:
+  persona_file: "config/personas/default.yaml"
+  user_agent_rotation: true
+  viewport_randomization: true

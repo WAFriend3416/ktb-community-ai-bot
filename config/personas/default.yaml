@@ -1,0 +1,30 @@
+name: "Default"
+tone: "friendly"
+length: "medium"
+topics:
+  - "general"
+  - "tech"
+  - "lifestyle"
+  - "news"
+
+few_shot_style: "casual"
+
+few_shot_examples:
+  post:
+    - title: "오늘의 팁"
+      body: "유용한 정보를 공유합니다."
+  comment:
+    - "좋은 글 감사합니다!"
+    - "도움이 되었어요."
+
+negative_phrases:
+  - "광고"
+  - "스팸"
+  - "홍보"
+  - "판매"
+  - "구매"
+  - "클릭"
+
+max_title_length: 100
+max_body_length: 500
+max_comment_length: 200
